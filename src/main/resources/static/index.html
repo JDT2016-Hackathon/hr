@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+ Copyright (c) 2014, 2016, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="x-ua-compatible" content="IE=edge"/>
+    <meta name="apple-mobile-web-app-title" content="Oracle JET"/>
+    <meta name="viewport" content="initial-scale=1.0"/>
+    <title>Java Day Tokyo 2016 Hackathon</title>
+    <link rel="icon" type="image/x-icon" href="css/images/favicon.ico"/>
+    <link rel="stylesheet" href="css/libs/oj/v2.0.1/alta/oj-alta-min.css"/>
+    <script type="text/javascript" data-main="js/main" src="js/libs/require/require.js"></script>
+  </head>
+  <body>
+    <div id="mainContent" class="oj-web-applayout-page">
+      <!-- Header content -->
+      <header role="banner" class="oj-web-applayout-header">
+        <div class="oj-web-applayout-max-width oj-flex-bar oj-sm-align-items-center">
+          <div data-bind="oj-flex-bar-middle">
+            <span class="oj-web-applayout-header-title" title="Application Name">Java Day Tokyo 2016 Hackathon</span>
+          </div>
+        </div>
+      </header>
+      <!-- Main page content -->
+      <main class="oj-web-applayout-content oj-web-applayout-max-width">
+        <div class="oj-flex">
+          <div class="oj-sm-12 oj-md-6 oj-flex">
+            <div class="oj-panel oj-margin oj-flex-item">
+              <!-- 追加する場所 #1 : ここから -->
+              <table summary="従業員一覧を表示" aria-label="従業員一覧を表示"
+                data-bind="ojComponent: { component: 'ojTable', data: tableDataSource,
+                  columns: [
+                    { headerText: 'ID',   field: 'employeeId' },
+                    { headerText: '姓',   field: 'firstName'  },
+                    { headerText: '名',   field: 'lastName'   },
+                    { headerText: '給与', field: 'salary'     },
+                  ],
+                  rootAttributes: { 'style': 'width: 100%;' }
+                }">
+              </table>
+              <div data-bind="ojComponent: { component: 'ojPagingControl',
+                data: tableDataSource, pageSize: 10
+              }"></div>
+              <!-- 追加する場所 #2 : ここまで -->
+            </div>
+          </div>
+          <div class="oj-sm-12 oj-md-6 oj-flex">
+            <div class="oj-panel oj-margin oj-flex-item">
+              <!-- 追加する場所 #2 : ここから -->
+              <div style="width: 100%; height: 500px;"
+                data-bind="ojComponent: {
+                  component: 'ojChart',
+                  type: 'pie',
+                  series: chartSeries,
+                  legend: { position: 'bottom' }
+                }">
+              </div>
+              <!-- 追加する場所 #2 : ここまで -->
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
