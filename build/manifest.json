@@ -1,0 +1,11 @@
+{
+    "runtime": {
+        "majorVersion": "8"
+    },
+    "command": "java -jar hr-0.1.jar",
+    "release": {
+        "commit": "verion 0.1 .",
+        "version": "0.1"
+    },
+    "notes": "Human Resource Service"
+}
