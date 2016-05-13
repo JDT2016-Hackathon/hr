@@ -34,7 +34,6 @@ public class HrResourceController {
         @SuppressWarnings("unchecked")
         List<Employee> entities =
                 em.createNamedQuery("Employee.findAll").getResultList();
-        EntityManagerUtils.closeAll();
         return entities;
     }
 
@@ -50,7 +49,6 @@ public class HrResourceController {
         @SuppressWarnings("unchecked")
         List<Employee> entities =
                 em.createNamedQuery("Department.findAll").getResultList();
-        EntityManagerUtils.closeAll();
         return entities;
     }
 
