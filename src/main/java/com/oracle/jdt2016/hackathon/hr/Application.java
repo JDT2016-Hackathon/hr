@@ -22,13 +22,14 @@ public class Application {
 //        }
 //        System.out.println("---- END: URLs of URLClassLoader ----");
         EntityManagerUtils.initialize();
-        Runtime.getRuntime().addShutdownHook(new Thread(){
+        Runtime.getRuntime().addShutdownHook(new Thread() {
             @Override
             public void run() {
                 EntityManagerUtils.closeAll();
                 System.out.println("bye.");
             }
         });
+        System.out.println("Welcome to Java Day Tokyo 2016!");
     }
 
 }
