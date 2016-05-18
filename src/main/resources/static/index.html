@@ -12,7 +12,7 @@
     <title>Java Day Tokyo 2016 Hackathon</title>
     <link rel="icon" type="image/x-icon" href="css/images/favicon.ico"/>
     <link rel="stylesheet" href="css/libs/oj/v2.0.1/alta/oj-alta-min.css"/>
-    <script type="text/javascript" data-main="js/main" src="js/libs/require/require.js"></script>
+    <script data-main="js/main" src="js/libs/require/require.js"></script>
   </head>
   <body>
     <div id="mainContent" class="oj-web-applayout-page">
@@ -20,7 +20,8 @@
       <header role="banner" class="oj-web-applayout-header">
         <div class="oj-web-applayout-max-width oj-flex-bar oj-sm-align-items-center">
           <div data-bind="oj-flex-bar-middle">
-            <span class="oj-web-applayout-header-title" title="Application Name">Java Day Tokyo 2016 Hackathon</span>
+            <span class="oj-web-applayout-header-title" title="Application Name"
+              data-bind="text: titleLabel"></span>
           </div>
         </div>
       </header>
@@ -29,36 +30,46 @@
         <div class="oj-flex">
           <div class="oj-sm-12 oj-md-6 oj-flex">
             <div class="oj-panel oj-margin oj-flex-item">
-              <!-- 追加する場所 #1 : ここから -->
               <table summary="従業員一覧を表示" aria-label="従業員一覧を表示"
                 data-bind="ojComponent: { component: 'ojTable', data: tableDataSource,
                   columns: [
-                    { headerText: 'ID',   field: 'employeeId' },
-                    { headerText: '姓',   field: 'firstName'  },
-                    { headerText: '名',   field: 'lastName'   },
-                    { headerText: '給与', field: 'salary'     },
+                    { headerText: 'ID'   },
+                    { headerText: '姓'   },
+                    { headerText: '名'   },
+                    { headerText: '給与' },
                   ],
-                  rootAttributes: { 'style': 'width: 100%;' }
+                  rowTemplate: 'empRowTemplate',
+                  rootAttributes: { 'style': 'width: 100%;' },
                 }">
               </table>
-              <div data-bind="ojComponent: { component: 'ojPagingControl',
-                data: tableDataSource, pageSize: 10
+              <script id="empRowTemplate" type="text/html">
+                <tr>
+                  <td data-bind="text: employeeId"></td>
+                  <td data-bind="text: firstName"></td>
+                  <td data-bind="text: lastName"></td>
+                  <td data-bind="text: salary"></td>
+                </tr>
+              </script>
+              <div data-bind="ojComponent: {
+                component: 'ojPagingControl',
+                data: tableDataSource,
+                pageSize: 10
               }"></div>
-              <!-- 追加する場所 #2 : ここまで -->
             </div>
           </div>
           <div class="oj-sm-12 oj-md-6 oj-flex">
             <div class="oj-panel oj-margin oj-flex-item">
-              <!-- 追加する場所 #2 : ここから -->
+              <!-- チャートの設定 : ここから-->
               <div style="width: 100%; height: 500px;"
                 data-bind="ojComponent: {
                   component: 'ojChart',
-                  type: 'pie',
+                  type: 'bar',
                   series: chartSeries,
+                  groups: chartGroups,
                   legend: { position: 'bottom' }
                 }">
               </div>
-              <!-- 追加する場所 #2 : ここまで -->
+              <!-- チャートの設定: ここまで -->
             </div>
           </div>
         </div>
