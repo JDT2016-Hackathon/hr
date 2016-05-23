@@ -72,7 +72,6 @@ function(oj, ko, $) {
     // Knockout.jsによって監視されているので双方向データバインドが有効なプロパティ
     self.titleLabel  = ko.observable("Java Day Tokyo 2016 Hackathon");
     self.employees   = ko.observableArray();
-    self.chartGroups = ko.observableArray(["給与"]);
 
     // RESTサービス呼び出しのための Collectionのインスタンスを生成
     self.empCollection = new EmployeesCollection();
@@ -92,10 +91,10 @@ function(oj, ko, $) {
       return new oj.PagingTableDataSource(new oj.ArrayTableDataSource(self.employees()));
     });
 
-    // チャート（ojChart コンポーネント）で表示するためのを抽出
+    // グラフ（ojChart コンポーネント）で表示するためのデータを抽出
     // self.employees に変更があるとコールバック関数が呼ばれる
     // チャートのデータは次のようなオブジェクトの配列
-    // { name: <シリーズデータの名前>, items: [ <グループ#1 の値>, <グループ#2の値>, ... ] }
+    // { name: <系列データの名前>, items: [ <グループ#1 の値>, <グループ#2の値>, ... ] }
     self.chartSeries = ko.computed(function () {
       var seriesValues = [];
       if (self.employees().length !== 0) {
