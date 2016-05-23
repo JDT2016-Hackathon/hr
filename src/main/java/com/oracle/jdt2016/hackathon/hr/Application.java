@@ -25,7 +25,7 @@ public class Application {
         Runtime.getRuntime().addShutdownHook(new Thread() {
             @Override
             public void run() {
-                EntityManagerUtils.closeAll();
+                EntityManagerUtils.closeEntityManagerFactory();
                 System.out.println("bye.");
             }
         });
