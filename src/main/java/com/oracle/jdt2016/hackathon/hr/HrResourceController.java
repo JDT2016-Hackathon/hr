@@ -42,16 +42,16 @@ public class HrResourceController {
          * これにより、画面に表示されるグラフの形状が変わることを確認
          * してください。
          */
-        Employee rookie = new Employee();
-        rookie.setEmployeeId(999);
-        rookie.setFirstName("Duke");
-        rookie.setLastName("Java");
-        rookie.setSalary(BigDecimal.valueOf(99999999));
-        @SuppressWarnings("unchecked")
-        List<Job> jobs =
-            em.createNamedQuery("Job.findAll").getResultList();
-        rookie.setJob(jobs.get(0));
-        entities.add(rookie);
+//        Employee rookie = new Employee();
+//        rookie.setEmployeeId(999);
+//        rookie.setFirstName("Duke");
+//        rookie.setLastName("Java");
+//        rookie.setSalary(BigDecimal.valueOf(99999999));
+//        @SuppressWarnings("unchecked")
+//        List<Job> jobs =
+//            em.createNamedQuery("Job.findAll").getResultList();
+//        rookie.setJob(jobs.get(0));
+//        entities.add(rookie);
         return entities;
     }
 
