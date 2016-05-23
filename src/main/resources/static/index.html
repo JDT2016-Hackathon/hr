@@ -30,8 +30,10 @@
         <div class="oj-flex">
           <div class="oj-sm-12 oj-md-6 oj-flex">
             <div class="oj-panel oj-margin oj-flex-item">
+              <!-- テーブルの設定:  ここから -->
               <table summary="従業員一覧を表示" aria-label="従業員一覧を表示"
-                data-bind="ojComponent: { component: 'ojTable', data: tableDataSource,
+                data-bind="ojComponent: { component:'ojTable',
+                  data: tableDataSource,
                   columns: [
                     { headerText: 'ID'   },
                     { headerText: '姓'   },
@@ -50,11 +52,14 @@
                   <td data-bind="text: salary"></td>
                 </tr>
               </script>
+              <!-- テーブルの設定: ここまで -->
+              <!-- テーブルのページングの設定: ここから -->
               <div data-bind="ojComponent: {
                 component: 'ojPagingControl',
                 data: tableDataSource,
                 pageSize: 10
               }"></div>
+              <!-- テーブルのページングの設定: ここまで -->
             </div>
           </div>
           <div class="oj-sm-12 oj-md-6 oj-flex">
@@ -63,9 +68,8 @@
               <div style="width: 100%; height: 500px;"
                 data-bind="ojComponent: {
                   component: 'ojChart',
-                  type: 'bar',
+                  type: 'pie',
                   series: chartSeries,
-                  groups: chartGroups,
                   legend: { position: 'bottom' }
                 }">
               </div>
