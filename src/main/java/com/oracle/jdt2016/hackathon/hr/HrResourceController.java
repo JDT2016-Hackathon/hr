@@ -3,6 +3,7 @@
  */
 package com.oracle.jdt2016.hackathon.hr;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.oracle.jdt2016.hackathon.hr.model.Employee;
+import com.oracle.jdt2016.hackathon.hr.model.Job;
 
 /**
  * 
@@ -34,6 +36,19 @@ public class HrResourceController {
         @SuppressWarnings("unchecked")
         List<Employee> entities =
                 em.createNamedQuery("Employee.findAll").getResultList();
+        /*
+         * 以下のコードのコメントアウトを解除すると、返り値に新しいエントリーが追加されるようになります。
+         * これにより、画面に表示されるグラフの形状が変わることを確認してください。
+         */
+//        Employee rookie = new Employee();
+//        rookie.setEmployeeId(999);
+//        rookie.setFirstName("Duke");
+//        rookie.setLastName("Java");
+//        rookie.setSalary(BigDecimal.valueOf(99999999));
+//        @SuppressWarnings("unchecked")
+//        List<Job> jobs = em.createNamedQuery("Job.findAll").getResultList();
+//        rookie.setJob(jobs.get(0));
+//        entities.add(rookie);
         return entities;
     }
 
