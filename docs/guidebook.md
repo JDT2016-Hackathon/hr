@@ -52,7 +52,7 @@
 ### 2-1. 概要
 本ハッカソンで利用するデモアプリは、人事システムのデータを模した、HR(Human Resource)サンプルスキーマのデータを、ブラウザの画面に表示するアプリケーションです。
 
-![3](./images/3.png)
+![2-1-1](./images/2-1-1.png)
 
 画面左の表では、各従業員のデータをリストにして表示します。一方、画面右の円グラフでは、職種毎の給与の合計額を、パーセンテージで表示します。
 
@@ -63,7 +63,7 @@
 ### 2-2. サーバーサイド
 以下の図は、サーバーサイドの構成を表しています。
 
-<div align="center"><img src="./images/3-2.png" width="400"></div>
+<div align="center"><img src="./images/2-2-1.png" width="400"></div>
 
 本アプリケーションは、以下のOSS群を使って実装されています。
 
@@ -113,7 +113,7 @@ Oracle JET は、jQuery や Knockout.js、RequrieJS などの現在既に広く�
 
 今回のデモ・アプリケーションのクライアント・サイドは、次の図のように Model/View/ViewModel パターンに基づいて実装されています。
 
-<div align="center"><img src="./images/3-3.png" width="400"></div>
+<div align="center"><img src="./images/2-3-1.png" width="400"></div>
 
 - Model
     * RESTサービス呼び出しなどのビジネス・ロジックを実装します。Oracle JET は REST サービスの呼び出しを共通化するための Common Model & Collection API を提供しているので、データの CRUD を簡単に実装できます。
@@ -124,7 +124,7 @@ Oracle JET は、jQuery や Knockout.js、RequrieJS などの現在既に広く�
 
 ここでは、サンプル・アプリケーションの View を中心に説明します。今回使用するサンプル・アプリケーションは、REST サービスから取得したデータを画面左にテーブルで、画面右に職種別の給与データの合計を円グラフで表示します。テーブルと円グラフは、それぞれ Oracle JET が提供する UI コンポーネントを使用しています。
 
-![3](./images/3.png)
+![2-3-2](./images/2-3-2.png)
 
 画面左に表示されるテーブルには、「ID」、「姓」、「名」、「給与」の4つの列があります。次のコードは、View のソースコードからテーブルの設定に関する部分を抜粋したものです。
 
@@ -191,7 +191,7 @@ Oracle JET が提供する UI コンポーネントは、今回のサンプル�
 
 - http://www.oracle.com/webfolder/technetwork/jet/uiComponents-pieChart-default.html
 
-![3-4](./images/3-4.png)
+![2-3-3](./images/2-3-3.png)
 
 「Recipe」のセクションでは円グラフを使用するための基本的な設定について説明しています。例えば、`styleDefaults.threeDEffect` というプロパティの値を `on` に設定すると3Dで表示されることなどがわかります。
 
@@ -214,11 +214,11 @@ Oracle JET が提供する UI コンポーネントは、今回のサンプル�
 
 リポジトリ「JDT2016-Hackathon/hr」のトップ画面が表示されたら、`Clone or Download` > `Download ZIP`をクリックします。
 
-![1](./images/1.png)
+![3-1-1](./images/3-1-1.png)
 
 hr-master.zipのダウンロードが開始されます。お使いのブラウザに合わせて、ダウンロードを進める操作をおこなってください。
 
-<img src="./images/2.png" width="360">
+<img src="./images/3-1-2.png" width="360">
 
 ダウンロードが完了したら、取得したファイルhr-master.zipを解凍します。生成されたフォルダhr-masterをエクスプローラで開くと、同名のフォルダが格納されていますので、これを任意のフォルダに移動してください。
 
@@ -306,7 +306,7 @@ hr-0.1.jarは、このアプリケーションの本体、hr-0.1-acc.zipは、Ap
 
 以下のような画面が表示されることを確認してください。
 
-![3](./images/3.png)
+![3-3-1](./images/3-3-1.png)
 
 デモアプリをローカルで動作させる手順は、以上です。
 
@@ -321,24 +321,24 @@ hr-0.1.jarは、このアプリケーションの本体、hr-0.1-acc.zipは、Ap
 
 Eclipseを起動したら、ツールバーから`File` > `Import...`の順にクリックします。
 
-<img src="./images/19.png" width="360">
+<img src="./images/4-1-1.png" width="360">
 
 「Import」ダイアログが開いたら、「Select an import source: 」というテキストボックスに"maven"と入力します。「Existing Maven Projects」という項目が表示されるので、それを選択し、`Next`をクリックします。
 
-<img src="./images/20.png" width="360">
+<img src="./images/4-1-2.png" width="360">
 
 
 続く画面で、`Browse...`をクリックします。ディレクトリを選択するダイアログが表示されるので、展開したソースコードのルートフォルダ [hr-master] を選択します。
 
-<img src="./images/21.png" width="360">
+<img src="./images/4-1-3.png" width="360">
 
 「Root Directory: 」、「Projects: 」の表示が、下図のようになっていることを確認し、`Finish`をクリックします。
 
-<img src="./images/22.png" width="360">
+<img src="./images/4-1-4.png" width="360">
 
 インポート処理が完了すると、EclipseのProject Explorerに「hr」というプロジェクトが表示されます。
 
-<img src="./images/23.png" width="360">
+<img src="./images/4-1-5.png" width="360">
 
 以上で、IDEへのプロジェクトのインポートは完了です。これ以降、ソースコードのカスタマイズを進めていきます。
 
@@ -395,7 +395,7 @@ HrResourceController.javaの抜粋を以下に示します。
 
 以下の画像のようにグラフの表示が変わっていることを確認してください。
 
-<img src="./images/24.png" width="360">
+<img src="./images/4-2-1.png" width="360">
 
 
 ### 4-3. index.html ファイルを編集する
@@ -444,7 +444,7 @@ _変更後 （74および75行目を追加）:_
 
 アプリケーションを再ビルドし、実行すると円グラフは次のように表示されます。
 
-<img src="./images/4-3_piechart.png" width="360">
+<img src="./images/4-3-1.png" width="360">
 
 <i>
 <strong>[NOTE]</strong><br>
@@ -511,66 +511,66 @@ manifest.jsonが、ACCのメタデータファイルです。デモアプリのm
 
 Oracle Cloudのホーム画面が表示されたら、画面右上の[Sign In]をクリックします。
 
-![4](./images/4.png)
+![5-2-1](./images/5-2-1.png)
 
 「Cloud Account」と表記された領域にあるプルダウンメニューで、講師から指示されたデータセンターを選択し、`My Service`ボタンをクリックします。
 
-![5](./images/5.png)
+![5-2-2](./images/5-2-2.png)
 
 サインイン画面が表示されたら、講師から指示されたアイデンティティ・ドメインを入力し`実行`をクリックします。
 
-<img src="./images/6.png" width="360">
+<img src="./images/5-2-3.png" width="360">
 
 テキストボックスがユーザー名とパスワードの入力欄に切り替わります。こちらも講師から指示された値を入力し、`サインイン`をクリックします。
 
-<img src="./images/7.png" width="360">
+<img src="./images/5-2-4.png" width="360">
 
-My Service画面が表示されたら、画面左上のナビゲーション・メニュー アイコン![8](./images/8.png)をクリックします。
+My Service画面が表示されたら、画面左上のナビゲーション・メニュー アイコン![5-2-5](./images/5-2-5.png)をクリックします。
 
 展開されたメニューで、`Dashboard` > `Oracle Application Container Cloud`ををクリックします。
 
-<img src="./images/9.png" width="360">
+<img src="./images/5-2-6.png" width="360">
 
 以下のような、ACCの管理コンソールのトップ画面が表示されることを確認してください。
 
-![10](./images/10.png)
+![5-2-7](./images/5-2-7.png)
 
 ### 5-3. アプリケーションのデプロイ
 管理コンソールのトップ画面では、既に作成されているアプリケーションが表示されています。今回は、このアプリケーションを更新する形で、アプリケーションデプロイします。
 
 アプリケーションの名前部分のリンクをクリックします。
 
-<img src="./images/11.png" width="360">
+<img src="./images/5-3-1.png" width="360">
 
 選択したアプリケーションの管理画面が表示されたら、画面左の`Deployment`パネルをクリックします。
 
-![12](./images/12.png)
+![5-3-2](./images/5-3-2.png)
 
 画面中央の領域が「Deployments」というタイトルの表示内容に切り替わったら、右上の`Upload New`をクリックします。
 
-![13](./images/13.png)
+![5-3-3](./images/5-3-3.png)
 
 「Upload」ダイアログが表示されたら、ラジオボタンで`Upload application archive`を選択します。続けて、`ファイルを選択`をクリックし[hr-master]\target\hr-0.1-acc.zipを選択します。
 
-<img src="./images/14.png" width="360">
+<img src="./images/5-3-4.png" width="360">
 
 最後に「Upload」ダイアログの`OK`ボタンをクリックします。
 
-<img src="./images/15.png" width="360">
+<img src="./images/5-3-5.png" width="360">
 
 ファイルのアップロード処理の後「Upload」ダイアログが自動的に閉じます。<br>
 管理コンソール画面を見ると左上のアイコンに砂時計のマークが付きます。これはデプロイ処理中であることを表しています。
 
-<img src="./images/16.png" width="360">
+<img src="./images/5-3-6.png" width="360">
 
 数分程度経過してから画面右のリフレッシュアイコンをクリックすると、デプロイ処理が完了し、砂時計のマークが消えていることが確認できます。
 
-<img src="./images/17.png" width="360">
+<img src="./images/5-3-7.png" width="360">
 
 ### 5-4. 動作確認
 デプロイが終わったアプリケーションにアクセスするには、画面左上に表示されているリンクをクリックします。
 
-<img src="./images/18.png" width="360">
+<img src="./images/5-4-1.png" width="360">
 
 アプリケーションの画面が表示されたら、4. で行った画面の編集が反映されていることを確認してください。
 
