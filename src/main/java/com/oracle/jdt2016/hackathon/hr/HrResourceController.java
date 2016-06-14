@@ -52,6 +52,7 @@ public class HrResourceController {
 //            em.createNamedQuery("Job.findAll").getResultList();
 //        rookie.setJob(jobs.get(0));
 //        entities.add(rookie);
+        em.close();
         return entities;
     }
 
@@ -67,6 +68,7 @@ public class HrResourceController {
         @SuppressWarnings("unchecked")
         List<Employee> entities =
                 em.createNamedQuery("Department.findAll").getResultList();
+        em.close();
         return entities;
     }
 
