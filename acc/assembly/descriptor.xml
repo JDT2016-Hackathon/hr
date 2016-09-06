@@ -6,7 +6,7 @@
     <includeBaseDirectory>false</includeBaseDirectory>
     <fileSets>
         <fileSet>
-            <directory>build/</directory>
+            <directory>acc/</directory>
             <outputDirectory>.</outputDirectory>
             <includes>
                 <include>manifest.json</include>
